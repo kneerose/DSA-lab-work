@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1601790023 source:/home/niraj/Documents/algorithm/toh/main.cpp
+	<bits/stdc++.h>
+
+1604310786 source:h:\linux\algorithm\toh\main.cpp
+	<iostream>
+
