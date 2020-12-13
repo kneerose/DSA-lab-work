@@ -146,8 +146,13 @@ class list
             cout<<"\n--------------------------------------------------\n";
 			struct node *temp;
 			temp=Start;
+			if(temp==NULL)
+            {
+                cout<<"empty list "<<endl;
+            }
+            else {
 			Start=Start->next;
-			delete temp;
+			delete temp; }
 		}
 		void delete_last()
 		{
@@ -156,13 +161,19 @@ class list
             cout<<"\n--------------------------------------------------\n";
 			struct node *previous,*current;
 			current=Start;
-			while(current->next!=NULL)
-			{
-				previous=current;
-				current=current->next;
-			}
-			previous->next=NULL;
-			delete current;
+			if (current == NULL )
+            {
+                cout<<"empty list "<<endl;
+            }
+            else {
+                while(current->next!=NULL)
+                {
+                    previous=current;
+                    current=current->next;
+                }
+                previous->next=NULL;
+                delete current;
+            }
 		}
 		void delete_num_node()
 		{
@@ -174,20 +185,28 @@ class list
             cin>>num;
 			struct node *previous,*current;
 			current=Start;
-			while(current->data!=num)
+			if(current==NULL)
+            {
+                cout<<"Empty list  "<<endl;
+            }
+            else
+            {
+                while(current->data!=num)
 			{
 				previous=current;
 				current=current->next;
 			}
 			previous->next=current->next;
-		}
+			delete current;
+
+            }
+        }
 };
 int main()
 {
     list obj;
     int a;
     cout<<"\t\t\t-------Implementation of singly Linked list----------------        "<<endl;
-    do{
     cout<<"1. create linked list "<<endl;
     cout<<"2. insert node at start"<<endl;
     cout<<"3. insert node at end"<<endl;
@@ -197,30 +216,38 @@ int main()
     cout<<"7. delete node at last"<<endl;
     cout<<"8. delete given node"<<endl;
 	cout<<"9. exit"<<endl;
-	cout<<"choose the option"<<endl;
+	do{
+	cout<<"choose the option\t";
 	cin>>a;
 	switch(a)
 	{
 	case 1:
             obj.createnode();
+            obj.display();
             break;
     case 2:
             obj.insert_start();
+            obj.display();
             break;
     case 3:
             obj.insert_end();
+            obj.display();
             break;
     case 4:
             obj.insert_val_before();
+            obj.display();
             break;
     case 5:
             obj.insert_val_after();
+            obj.display();
             break;
     case 6:
             obj.delete_first();
+            obj.display();
             break;
     case 7:
             obj.delete_last();
+            obj.display();
             break;
     case 8:
             obj.delete_num_node();
@@ -229,7 +256,7 @@ int main()
     case 9: break;
     default:cout<<"invalid input"<<endl;
     }
-    obj.display();
+
     }
     while(a!=9);
 

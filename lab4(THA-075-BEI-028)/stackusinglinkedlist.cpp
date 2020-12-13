@@ -13,7 +13,7 @@ struct Node* head = NULL;
 void push()
 {
      int val;
-        cout<<endl<<"enter the value to push: ";
+        cout<<"enter the value to push: ";
         cin>>val;
         Node *newnode = new Node;
         newnode->data = val;
@@ -28,7 +28,6 @@ void push()
             newnode->next = head;
             head = newnode;
         }
-        cout<<endl;
 }
 
 void pop()
@@ -64,12 +63,12 @@ void display()
 }
 int main() {
    int ch, val;
-   do {
       cout<<"1) Push"<<endl;
       cout<<"2) Pop"<<endl;
       cout<<"3) Display"<<endl;
       cout<<"4) Exit"<<endl;
-      cout<<"Enter your choice: "<<endl;
+      do {
+      cout<<"Enter your choice: \t";
       cin>>ch;
       switch(ch)
        {

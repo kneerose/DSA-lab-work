@@ -37,12 +37,12 @@ void dequeue()
 {
     if(head == NULL)
     {
-        cout<<endl<<endl<<"Underflow!!"<<endl;
+        cout<<"Underflow!!"<<endl;
     }
     else
     {
         node *ptr = head;
-        cout<<endl<<"The dequeued data is: "<<head->data<<endl;
+        cout<<"The dequeued data is: "<<head->data<<endl;
         head = head->next;
         delete ptr;
     }
@@ -56,25 +56,24 @@ void display()
     }
     else
     {
-        cout<<endl<<endl;
         node *ptr = head;
         while(ptr != NULL)
         {
             cout<<" "<<ptr->data<<" ";
             ptr = ptr->next;
         }
-        cout<<endl<<endl;
+        cout<<endl;
     }
 }
 int main()
 {
     int ch;
-    do
-    {
         cout<<"1. Enqueue."<<endl;
         cout<<"2. Dequeue"<<endl;
         cout<<"3. Display"<<endl;
         cout<<"4. Exit"<<endl;
+        do
+        {
         cout<<"Enter your choice ";
         cin>>ch;
         switch (ch)

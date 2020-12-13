@@ -26,7 +26,6 @@ public:
         if(avail==-1)
         {
             cout<<"Overflow";
-            exit(1);
         }
         p=avail;
         avail=node[avail].next;
@@ -151,6 +150,7 @@ int main()
     cout<<"4. Insert After Node"<<endl;
     cout<<"5. Delete After Node"<<endl;
     cout<<"6. Exit"<<endl;
+    cout<<" Choose the option: \t";
     cin>>ch;
     switch(ch)
     {

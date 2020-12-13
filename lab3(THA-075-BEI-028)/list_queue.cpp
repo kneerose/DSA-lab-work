@@ -27,7 +27,6 @@ public:
         if(avail==-1)
         {
             cout<<"Overflow";
-            exit(1);
         }
         p=avail;
         avail=node[avail].next;
@@ -44,7 +43,6 @@ public:
         if(rear==max-1)
         {
             cout<<"Overflow"<<endl<<endl;
-            exit(1);
         }
         else
         {
@@ -72,7 +70,6 @@ public:
         if(front>rear || front<0)
         {
             cout<<"Underflow"<<endl<<endl;
-            exit(1);
         }
         else
         {
@@ -92,7 +89,7 @@ public:
        cout<<"***Created Queue***"<<endl<<endl;
        cout<<"index\t"<< "Value\t"<<"next node"<<endl;
 
-            for(int i=0 ; i <=max; i++)
+            for(int i=front ; i <=rear; i++)
             {
                 cout<<i<<"\t";
                 cout<<node[i].info<<"\t";

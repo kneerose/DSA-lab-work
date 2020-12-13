@@ -1,3 +1,4 @@
+//WAP for array implementation of Linear Queue
 #include <iostream>
 #define max 5
 using namespace std;
@@ -37,9 +38,9 @@ void dequeue()
     }
     else
     {
-        cout<<"dequeue element is : "<<array[front]<<"\t"<<"front =\t"<<front<<"\trear= \t"<<rear<<endl;
         array[front]=0;
         front++;
+        cout<<"dequeue element is : "<<array[front]<<"\t"<<"front =\t"<<front<<"\trear= \t"<<rear<<endl;
     }
 
 }
