@@ -1,13 +1,12 @@
-//3.WAP to check parenthesis of algebraic expression using stack 
+//3.WAP to check parenthesis of algebraic expression using stack
 #include <iostream>
 #define SIZE 5
 using namespace std;
 class stack
 {
-    private:
-        int tos=-1;
-        int array[SIZE];
     public:
+    int tos=-1;
+    int array[SIZE];
         bool isEmpty()
         {
             if(tos==-1)
@@ -55,11 +54,28 @@ bool check_parenthesis(string infix)
     stack stk;
     for(int i=0; i<infix.length(); i++)
     {
-        if(infix[i]=='(')
-            stk.push('(');
+        if(infix[i]=='(' || infix[i]=='[' || infix[i]=='{')
+            stk.push(infix[i]);
         else if(infix[i]==')')
         {
             if(stk.isEmpty()!=true)
+                if(stk.array[stk.tos]=='(')
+                    stk.pop();
+            else
+                return false;
+        }
+        else if(infix[i]=='}')
+        {
+            if(stk.isEmpty()!=true)
+                if(stk.array[stk.tos]=='{')
+                    stk.pop();
+            else
+                return false;
+        }
+        else if(infix[i]==']')
+        {
+            if(stk.isEmpty()!=true)
+                if(stk.array[stk.tos]=='[')
                 stk.pop();
             else
                 return false;
